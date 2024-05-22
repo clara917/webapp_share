@@ -1,0 +1,15 @@
+[Unit]
+Description=My Web Application Service
+After=cloud-final.service
+
+[Service]
+Type=simple 
+Group=csye6225
+User=csye6225
+WorkingDirectory=/opt/csye6225/webapp
+ExecStart=/usr/bin/node /opt/csye6225/webapp/index.js
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=cloud-init.target
